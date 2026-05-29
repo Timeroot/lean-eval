@@ -33,6 +33,17 @@
     "generated_path": "generated/balanceable_bounded_partitions"
   },
   {
+    "id": "bezout_projective_multiplicity",
+    "title": "B\u00e9zout's theorem (projective, with multiplicity)",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.AlgebraicGeometry.Bezout",
+    "holes": [
+      "bezout_multiplicity"
+    ],
+    "generated_path": "generated/bezout_projective_multiplicity"
+  },
+  {
     "id": "brauer_character_in_cyclotomic",
     "title": "Character values of finite groups lie in cyclotomic fields",
     "test": false,
@@ -342,6 +353,17 @@
     "generated_path": "generated/exists_topologically_slice_not_smoothly_slice"
   },
   {
+    "id": "fatou_julia_dichotomy",
+    "title": "Fatou\u2013Julia / Cantor dichotomy",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.ComplexAnalysis.FatouJulia",
+    "holes": [
+      "julia_cantor_dichotomy"
+    ],
+    "generated_path": "generated/fatou_julia_dichotomy"
+  },
+  {
     "id": "feit_thompson",
     "title": "Feit\u2013Thompson odd-order theorem",
     "test": false,
@@ -406,6 +428,28 @@
       "frobenius_kernel_isNormal"
     ],
     "generated_path": "generated/frobenius_kernel_isNormal"
+  },
+  {
+    "id": "furstenberg_measure",
+    "title": "Furstenberg measure-preserving multiple recurrence",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Dynamics.FurstenbergMeasure",
+    "holes": [
+      "furstenberg_measure_recurrence"
+    ],
+    "generated_path": "generated/furstenberg_measure"
+  },
+  {
+    "id": "furstenberg_topological",
+    "title": "Furstenberg\u2013Weiss topological multiple recurrence (single-transformation form)",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Dynamics.FurstenbergTopological",
+    "holes": [
+      "furstenberg_topological_recurrence"
+    ],
+    "generated_path": "generated/furstenberg_topological"
   },
   {
     "id": "g2_irrep_tensor_square_decomp",
@@ -507,6 +551,17 @@
     "generated_path": "generated/heat_kernel_solves_heat_equation"
   },
   {
+    "id": "hopf_rinow",
+    "title": "Hopf\u2013Rinow theorem",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Geometry.HopfRinow",
+    "holes": [
+      "hopf_rinow"
+    ],
+    "generated_path": "generated/hopf_rinow"
+  },
+  {
     "id": "instance_hole_example",
     "title": "instance-hole minimal example",
     "test": true,
@@ -528,6 +583,17 @@
       "irreducible_nonnegative_matrix_has_positive_eigenvector_at_spectralRadius"
     ],
     "generated_path": "generated/irreducible_nonnegative_matrix_has_positive_eigenvector_at_spectralRadius"
+  },
+  {
+    "id": "isoperimetric_inequality",
+    "title": "Isoperimetric inequality (n-dim, topological-frontier form)",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Geometry.IsoperimetricInequality",
+    "holes": [
+      "isoperimetric"
+    ],
+    "generated_path": "generated/isoperimetric_inequality"
   },
   {
     "id": "jacobian_challenge_alggeo",
@@ -713,6 +779,17 @@
       "m23_irrep_tensor_square_decomp"
     ],
     "generated_path": "generated/m23_irrep_tensor_square_decomp"
+  },
+  {
+    "id": "mandelbar_not_path_connected",
+    "title": "Mandelbar (tricorn) is not path-connected (Hubbard\u2013Schleicher)",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.ComplexAnalysis.Mandelbar",
+    "holes": [
+      "mandelbar_not_path_connected"
+    ],
+    "generated_path": "generated/mandelbar_not_path_connected"
   },
   {
     "id": "mandelbrot_connected",
@@ -959,6 +1036,17 @@
     "generated_path": "generated/poincare_4d_topological"
   },
   {
+    "id": "poincare_bendixson",
+    "title": "Poincar\u00e9\u2013Bendixson theorem",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Dynamics.PoincareBendixson",
+    "holes": [
+      "poincare_bendixson"
+    ],
+    "generated_path": "generated/poincare_bendixson"
+  },
+  {
     "id": "poincare_high_dim_topological",
     "title": "Generalized topological Poincar\u00e9 conjecture in dimensions \u2265 5 (Smale)",
     "test": false,
@@ -1100,6 +1188,17 @@
       "smale_conjecture"
     ],
     "generated_path": "generated/smale_conjecture"
+  },
+  {
+    "id": "solvable_by_radicals_converse",
+    "title": "Solvable extensions \u2194 solvable groups (the missing converse in Abel\u2013Ruffini)",
+    "test": false,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Algebra.SolvableByRadicals",
+    "holes": [
+      "solvable_iff_solvableByRad"
+    ],
+    "generated_path": "generated/solvable_by_radicals_converse"
   },
   {
     "id": "sturm",

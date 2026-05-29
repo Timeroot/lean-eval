@@ -2,6 +2,7 @@ import Mathlib
 
 namespace LeanEval
 namespace ComplexAnalysis
+namespace MandelbrotProblem
 
 /-!
 # Mandelbrot set is connected (Douady–Hubbard)
@@ -23,5 +24,6 @@ def Mandelbrot : Set ℂ :=
 
 
 
+end MandelbrotProblem
 end ComplexAnalysis
 end LeanEval

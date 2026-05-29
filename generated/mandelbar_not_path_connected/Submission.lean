@@ -1,12 +1,12 @@
 import ChallengeDeps
 import Submission.Helpers
 
-open LeanEval.ComplexAnalysis.MandelbrotProblem
+open LeanEval.ComplexAnalysis
 open Function
 
 namespace Submission
 
-theorem mandelbrot_connected : IsConnected Mandelbrot := by
+theorem mandelbar_not_path_connected : ¬ IsPathConnected Mandelbar := by
   sorry
 
 end Submission
