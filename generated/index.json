@@ -759,6 +759,19 @@
     "generated_path": "generated/mulCayley_connected_iff_closure_eq_top"
   },
   {
+    "id": "multi_hole_helpers_example",
+    "title": "multi-hole-with-helpers regression example",
+    "test": true,
+    "submitter": "Kim Morrison",
+    "module": "LeanEval.Sandbox.MultiHoleHelpersExample",
+    "holes": [
+      "Helpers.first",
+      "Helpers.second_eq",
+      "Helpers.third_eq"
+    ],
+    "generated_path": "generated/multi_hole_helpers_example"
+  },
+  {
     "id": "nash_equilibrium_exists",
     "title": "Nash equilibrium existence theorem",
     "test": false,
