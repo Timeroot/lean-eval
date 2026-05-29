@@ -7,25 +7,17 @@ namespace ComplexAnalysis
 /-!
 # Fatou–Julia / Cantor dichotomy
 
-§62 (additional statement 1) of Knill's *Some Fundamental Theorems in
-Mathematics*. For the quadratic family `T_c(z) = z² + c`, the filled
-Julia set `K_c = { z ∈ ℂ | T_c^n(z) stays bounded }` satisfies:
+For the quadratic family `T_c(z) = z² + c`, the filled Julia set
+`K_c = { z ∈ ℂ | T_c^n(z) stays bounded }` satisfies:
 
-- `c ∈ M` (Mandelbrot set) ⇒ `K_c` is connected,
-- `c ∉ M` ⇒ `K_c` is homeomorphic to the Cantor space `ℕ → Bool`.
+- `c ∈ M` (Mandelbrot set) implies `K_c` is connected;
+- `c ∉ M` implies `K_c` is homeomorphic to the Cantor space `ℕ → Bool`.
 
-Knill calls `K_c` the "Julia set"; standard usage reserves "Julia set"
-for the boundary `∂K_c`. The dichotomy below holds under either reading
-because `K_c` is connected iff `∂K_c` is, and `K_c` is a Cantor set iff
-`∂K_c = K_c` is.
-
-Mathlib has `Function.iterate`, `IsConnected`, `Homeomorph`, and the
-Cantor-space `Mathlib.Topology.Instances.CantorSet` material (with
-`cantorSetHomeomorphNatToBool`), but no Julia / Mandelbrot definitions
-and no Fatou–Julia dichotomy. The Cantor side requires the
-polynomial-lemniscate connectedness of `z²`-preimages, perfectness and
-total disconnectedness for `c ∉ M`, and Brouwer's 1910 topological
-characterisation of Cantor space.
+For quadratic polynomials, the usual Julia set is `∂K_c`. The submitted
+statement uses the filled Julia set `K_c`; this is equivalent for the
+dichotomy here, since connectedness of `K_c` is equivalent to
+connectedness of `∂K_c`, and in the escaping case `K_c = ∂K_c` is a
+Cantor set.
 -/
 
 open Function
@@ -41,9 +33,9 @@ def Mandelbrot : Set ℂ :=
 def FilledJulia (c : ℂ) : Set ℂ :=
   { z : ℂ | ∃ M : ℝ, ∀ n : ℕ, ‖(Tc c)^[n] z‖ ≤ M }
 
-/-- **Fatou–Julia dichotomy.** For the quadratic family, the filled
-Julia set is connected iff `c ∈ M`; for `c ∉ M` it is homeomorphic to
-the Cantor space `ℕ → Bool`. -/
+/-- **Fatou–Julia dichotomy.** For the quadratic family, `c ∈ M` implies
+the filled Julia set `K_c` is connected; `c ∉ M` implies `K_c` is
+homeomorphic to the Cantor space `ℕ → Bool`. -/
 @[eval_problem]
 theorem julia_cantor_dichotomy (c : ℂ) :
     (c ∈ Mandelbrot → IsConnected (FilledJulia c)) ∧
