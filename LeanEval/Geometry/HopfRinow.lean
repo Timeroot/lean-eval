@@ -7,29 +7,24 @@ namespace LeanEval
 namespace Geometry
 
 /-!
-# Hopf–Rinow theorem (Hopf–Rinow, 1931)
+# Hopf–Rinow theorem
 
-§93 of Knill's *Some Fundamental Theorems in Mathematics*. For a
-connected, locally compact Riemannian manifold `M`, metric
-completeness and geodesic completeness are equivalent.
-
-Mathlib (v4.30) has `IsRiemannianManifold` and `riemannianEDist` /
-`pathELength` (Sébastien Gouëzel 2025, `Geometry/Manifold/Riemannian/`),
-but no `Geodesic` / `expMap` / `IsGeodesicallyComplete`, no
-Levi-Civita connection (in-flight via the placeholder PR #36036,
-WIP), and no `Hopf–Rinow` theorem (`grep -ri hopf.*rinow` returns no
-hits).
+For a connected, locally compact, finite-dimensional smooth Riemannian
+manifold `M`, metric completeness and geodesic completeness are
+equivalent.
 
 The problem ships two helper definitions: `IsGeodesic` (a path with
-locally linear `edist` — the constant-speed characterisation,
-equivalent to `∇γ̇γ̇ = 0` on a Riemannian manifold but expressible
-without the Levi-Civita connection) and `IsGeodesicallyComplete`
-(every geodesic on a bounded open interval extends to all of `ℝ`,
-Knill's "the exponential map extends to the whole tangent bundle"
-re-cast metrically).
+locally linear `edist` — a metric formulation of affinely parametrised
+local minimising geodesics, avoiding any Levi-Civita / connection
+infrastructure) and `IsGeodesicallyComplete` (every geodesic on a
+bounded open interval extends to all of `ℝ`, the metric analogue of
+"the exponential map extends to the whole tangent bundle").
 
-Local compactness is essential: Hopf–Rinow fails for infinite-
-dimensional Riemannian Hilbert manifolds (Atkin 1975).
+Finite dimensionality is essential: Hopf–Rinow fails on infinite-
+dimensional Riemannian Hilbert manifolds. The `IsRiemannianManifold I M`
+hypothesis ties `edist` to `riemannianEDist`; full smoothness of the
+metric is needed for the proof to construct minimising geodesics via
+Picard–Lindelöf on the geodesic ODE.
 -/
 
 /-- A path `γ : ℝ → M` is a **(constant-speed) geodesic** if there is
@@ -52,12 +47,13 @@ def IsGeodesicallyComplete (M : Type*) [EMetricSpace M] : Prop :=
         edist (γ s) (γ t) = (c : ℝ≥0∞) * ENNReal.ofReal |t - s|) →
     ∃ γext : ℝ → M, IsGeodesic γext ∧ ∀ t ∈ Set.Ioo a b, γext t = γ t
 
-/-- **Hopf–Rinow theorem.** For a connected, locally compact Riemannian
-manifold `M`, metric completeness and geodesic completeness are
-equivalent. -/
+/-- **Hopf–Rinow theorem.** For a connected, locally compact,
+finite-dimensional smooth Riemannian manifold `M`, metric completeness
+and geodesic completeness are equivalent. -/
 @[eval_problem]
 theorem hopf_rinow
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [FiniteDimensional ℝ E]
     {H : Type*} [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
     (M : Type*) [EMetricSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
     [Bundle.RiemannianBundle (fun x : M => TangentSpace I x)]
